@@ -14,7 +14,7 @@ namespace CNW_Shopping.Controllers
         public ActionResult Category()
         {
             var list = db.SanPham.ToList();
-            return View();
+            return View(list);
         }
     }
 }
