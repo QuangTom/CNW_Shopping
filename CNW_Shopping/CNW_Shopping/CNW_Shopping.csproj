@@ -197,6 +197,21 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DanhMucController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Models\DAO\DanhMucDAO.cs" />
+    <Compile Include="Areas\Admin\Models\Entity\AdminDbContext.cs" />
+    <Compile Include="Areas\Admin\Models\Entity\AnhSanPham.cs" />
+    <Compile Include="Areas\Admin\Models\Entity\ChiTietDonHang.cs" />
+    <Compile Include="Areas\Admin\Models\Entity\DanhMuc.cs" />
+    <Compile Include="Areas\Admin\Models\Entity\DonHang.cs" />
+    <Compile Include="Areas\Admin\Models\Entity\KhachHang.cs" />
+    <Compile Include="Areas\Admin\Models\Entity\NhanVien.cs" />
+    <Compile Include="Areas\Admin\Models\Entity\PhanQuyen.cs" />
+    <Compile Include="Areas\Admin\Models\Entity\SanPham.cs" />
+    <Compile Include="Areas\Admin\Models\Entity\Size.cs" />
+    <Compile Include="Areas\Admin\Models\Entity\TaiKhoan.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
@@ -210,8 +225,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\AnhSanPham.cs" />
     <Compile Include="Models\Entities\ChiTietDonHang.cs" />
+    <Compile Include="Models\Entities\ClientDbContext.cs" />
     <Compile Include="Models\Entities\DanhMuc.cs" />
-    <Compile Include="Models\Entities\Db_Shopping.cs" />
     <Compile Include="Models\Entities\DonHang.cs" />
     <Compile Include="Models\Entities\KhachHang.cs" />
     <Compile Include="Models\Entities\NhanVien.cs" />
@@ -237,6 +252,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMuc\IndexDanhMuc.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\HomeIndex.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -292,6 +311,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Admin\" />
     <Folder Include="Content\Template\" />
   </ItemGroup>
   <ItemGroup>

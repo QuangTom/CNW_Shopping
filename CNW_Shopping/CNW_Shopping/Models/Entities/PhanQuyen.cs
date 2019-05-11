@@ -12,11 +12,10 @@ namespace CNW_Shopping.Models.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhanQuyen()
         {
-            TaiKhoan = new HashSet<TaiKhoan>();
+            TaiKhoans = new HashSet<TaiKhoan>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaQuyen { get; set; }
 
         [Required]
@@ -24,6 +23,6 @@ namespace CNW_Shopping.Models.Entities
         public string TenQuyen { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TaiKhoan> TaiKhoan { get; set; }
+        public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }
     }
 }

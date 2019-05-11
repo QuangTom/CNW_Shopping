@@ -9,11 +9,11 @@ namespace CNW_Shopping.Controllers
 {
     public class HomeController : Controller
     {
-        Db_Shopping db = new Db_Shopping();
+        ClientDbContext db = new ClientDbContext();
         public ActionResult Index()
         {
             //var list = db.Database.SqlQuery<SanPham>("exec XemSP").ToList();
-            var list = db.SanPham.ToList();
+            var list = db.SanPhams.ToList();
             return View(list);
         }
 

@@ -11,7 +11,6 @@ namespace CNW_Shopping.Models.Entities
     {
         [Key]
         [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaDonHang { get; set; }
 
         [Key]

@@ -10,7 +10,6 @@ namespace CNW_Shopping.Models.Entities
     public partial class TaiKhoan
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaNhanVien { get; set; }
 
         [Required]

@@ -12,11 +12,10 @@ namespace CNW_Shopping.Models.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NhanVien()
         {
-            DonHang = new HashSet<DonHang>();
+            DonHangs = new HashSet<DonHang>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaNhanVien { get; set; }
 
         [StringLength(50)]
@@ -31,7 +30,7 @@ namespace CNW_Shopping.Models.Entities
         public string Email { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHang { get; set; }
+        public virtual ICollection<DonHang> DonHangs { get; set; }
 
         public virtual TaiKhoan TaiKhoan { get; set; }
     }

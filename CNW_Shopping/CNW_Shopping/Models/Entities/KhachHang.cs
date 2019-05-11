@@ -12,11 +12,10 @@ namespace CNW_Shopping.Models.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KhachHang()
         {
-            DonHang = new HashSet<DonHang>();
+            DonHangs = new HashSet<DonHang>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaKhachHang { get; set; }
 
         [Required]
@@ -39,6 +38,6 @@ namespace CNW_Shopping.Models.Entities
         public string MatKhau { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHang { get; set; }
+        public virtual ICollection<DonHang> DonHangs { get; set; }
     }
 }

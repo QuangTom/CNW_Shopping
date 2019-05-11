@@ -9,11 +9,11 @@ namespace CNW_Shopping.Controllers
 {
     public class CategoryController : Controller
     {
-        Db_Shopping db = new Db_Shopping();
+        ClientDbContext db = new ClientDbContext();
         // GET: Category
         public ActionResult Category()
         {
-            var list = db.SanPham.ToList();
+            var list = db.SanPhams.ToList();
             return View(list);
         }
     }

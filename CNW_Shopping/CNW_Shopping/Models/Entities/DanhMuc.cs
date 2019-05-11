@@ -12,11 +12,10 @@ namespace CNW_Shopping.Models.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DanhMuc()
         {
-            SanPham = new HashSet<SanPham>();
+            SanPhams = new HashSet<SanPham>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaDanhMuc { get; set; }
 
         [Required]
@@ -24,6 +23,6 @@ namespace CNW_Shopping.Models.Entities
         public string TenDanhMuc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SanPham> SanPham { get; set; }
+        public virtual ICollection<SanPham> SanPhams { get; set; }
     }
 }

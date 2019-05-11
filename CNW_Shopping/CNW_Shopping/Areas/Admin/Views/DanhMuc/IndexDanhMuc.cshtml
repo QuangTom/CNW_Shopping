@@ -1,0 +1,75 @@
+﻿
+@using CNW_Shopping.Areas.Admin.Models.Entity;
+@model IEnumerable<DanhMuc>
+
+@{
+    ViewBag.Title = "IndexDanhMuc";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="~/Areas/Admin/Views/Home/Index">Trang chủ</a>
+            </li>
+            <li class="breadcrumb-item active">Quản lý danh mục</li>
+        </ol>
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                Danh mục sản phẩm
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Mã Danh Mục</th>
+                                <th>Tên Danh Mục</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                      
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                foreach (var y in Model)
+                                {
+                                    <tr>
+
+                                        <td>@y.MaDanhMuc</td>
+                                        <td>@y.TenDanhMuc</td>
+                                        <td>
+                                            <a href="@Url.Action("SuaKhoanChi", "KhoanChi", new {@MaDanhMuc = @y.MaDanhMuc})">
+                                                <span class="fa fa-pencil-square-o" title="Sửa"></span>
+                                            </a>
+                                            <a href="@Url.Action("Delete", "KhoanChi", new {@MaDanhMuc = @y.MaDanhMuc})" onclick="return confirm('Bạn chắc chắn muốn xóa?')">
+                                                <span class="fa fa-trash" title="Xóa"></span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                    
+                        </tbody>
+                   
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+       
+    </div>
+    <!-- /.container-fluid -->
+    <!-- Sticky Footer -->
+
+</div>
+<!-- /.content-wrapper -->
+  
+<!-- /#wrapper -->
+

@@ -12,11 +12,12 @@ namespace CNW_Shopping.Models.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SanPham()
         {
-            ChiTietDonHang = new HashSet<ChiTietDonHang>();
+            AnhSanPhams = new HashSet<AnhSanPham>();
+            ChiTietDonHangs = new HashSet<ChiTietDonHang>();
+            Sizes = new HashSet<Size>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaSanPham { get; set; }
 
         public int? MaDanhMuc { get; set; }
@@ -29,17 +30,17 @@ namespace CNW_Shopping.Models.Entities
         [StringLength(255)]
         public string MoTaSanPham { get; set; }
 
-        public int? MaSize { get; set; }
-
-        public int? MaAnh { get; set; }
-
-        public virtual AnhSanPham AnhSanPham { get; set; }
+        public int? SoLuong { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDonHang> ChiTietDonHang { get; set; }
+        public virtual ICollection<AnhSanPham> AnhSanPhams { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
 
         public virtual DanhMuc DanhMuc { get; set; }
 
-        public virtual Size Size { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Size> Sizes { get; set; }
     }
 }
