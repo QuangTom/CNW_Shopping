@@ -18,6 +18,12 @@
             </li>
             <li class="breadcrumb-item active">Quản lý danh mục</li>
         </ol>
+        <div class="card mb-3">
+            <div class="title-action">
+                <a href="~/DanhMuc/ThemDanhMuc" class="btn btn-primary">Thêm Mới</a>
+            </div>
+        </div>
+
         <!-- DataTables Example -->
         <div class="card mb-3">
             <div class="card-header">
@@ -34,7 +40,7 @@
                                 <th></th>
                             </tr>
                         </thead>
-                      
+
                         <tbody>
                             @if (Model != null)
                             {
@@ -46,7 +52,7 @@
                                         <td>@y.TenDanhMuc</td>
                                         <td>
                                             <a href="@Url.Action("SuaKhoanChi", "KhoanChi", new {@MaDanhMuc = @y.MaDanhMuc})">
-                                                <span class="fa fa-pencil-square-o" title="Sửa"></span>
+                                                <span class="far fa-edit" title="Sửa"></span>
                                             </a>
                                             <a href="@Url.Action("Delete", "KhoanChi", new {@MaDanhMuc = @y.MaDanhMuc})" onclick="return confirm('Bạn chắc chắn muốn xóa?')">
                                                 <span class="fa fa-trash" title="Xóa"></span>
@@ -55,21 +61,19 @@
                                     </tr>
                                 }
                             }
-                    
+
                         </tbody>
-                   
+
                     </table>
                 </div>
             </div>
-            
+
         </div>
-       
+
     </div>
     <!-- /.container-fluid -->
     <!-- Sticky Footer -->
 
 </div>
 <!-- /.content-wrapper -->
-  
 <!-- /#wrapper -->
-
